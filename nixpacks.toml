@@ -2,7 +2,7 @@
 nixPkgs = ['nodejs_20', 'python3', 'gcc', 'gnumake']
 
 [phases.install]
-cmds = ['cd website && npm ci']
+cmds = ['cd website && npm install']
 
 [phases.build]
 cmds = ['cd website && npm run build']
