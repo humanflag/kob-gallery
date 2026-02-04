@@ -1,13 +1,18 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 
+// Look for database file in current working directory, or parent directory (for Railway deployment)
 const dbPath = path.join(process.cwd(), 'kob_archive.db');
+const parentDbPath = path.join(process.cwd(), '..', 'kob_archive.db');
 
 let db: Database.Database | null = null;
 
 export function getDb(): Database.Database {
   if (!db) {
-    db = new Database(dbPath, { readonly: true });
+    // Try current directory first, then parent directory
+    const fs = require('fs');
+    const dbLocation = fs.existsSync(dbPath) ? dbPath : parentDbPath;
+    db = new Database(dbLocation, { readonly: true });
   }
   return db;
 }

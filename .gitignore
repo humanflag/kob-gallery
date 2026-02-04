@@ -1,6 +1,3 @@
 images/
 website/public/images/
-*.db
-*.sqlite
-*.sqlite3
 node_modules/
