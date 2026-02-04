@@ -7,6 +7,6 @@ startCommand = "cd website && npm start"
 
 [env]
 NODE_ENV = "production"
-NIXPACKS_NODE_VERSION = "18"
+NIXPACKS_NODE_VERSION = "20"
 NIXPACKS_BUILD_CMD = "cd website && npm run build"
 NIXPACKS_START_CMD = "cd website && npm start"
