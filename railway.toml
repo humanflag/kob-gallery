@@ -1,0 +1,9 @@
+[build]
+command = "cd website && npm ci && npm run build"
+
+[deploy]
+startCommand = "cd website && npm start"
+
+[[services]]
+name = "kob-gallery-web"
+source = "."
